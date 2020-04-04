@@ -2,12 +2,16 @@
 <div style="width: 100%; content-align: center">
     <el-dialog
   :visible.sync="showDialogue"
-  title="Warning"
+  :title="shopData.productName"
   width="30%"
   center
  >
   
-  <span></span>
+  <el-form  :model="purchaseOrder"  ref="form1"  class="ruleForm" label-position="top" align="center" >
+<el-form-item label="How many do you need?" prop="number">
+<el-input placeholder="Please input" type="number" v-model="purchaseOrder.number"></el-input>
+  </el-form-item>
+  </el-form>
   <span slot="footer" class="dialog-footer">
     <el-button @click="this.showDialogue = false">Cancel</el-button>
     <el-button type="primary" @click="checkout()">Confirm</el-button>
@@ -41,7 +45,7 @@
         <el-table-column
       label="Actions">
        <template slot-scope="scope">
-     <el-button type="success" @click="openShop(scope.prop)" round>Inquire</el-button>
+     <el-button type="success" @click="openShop(scope.row)" round>Inquire</el-button>
        </template>
     </el-table-column>
   </el-table>
@@ -102,7 +106,7 @@
           }
         }
     ],
-    shopData: [{
+    shopData: [ {
           productID: '',
           productName: '',
           productImage: '',
@@ -113,18 +117,18 @@
               something: '',
               moreStuff: ''
           }
+        }],
+        purchaseOrder: {
+          number: 0
         },
-    ],
     showDialogue: false
       }
     },
     methods: {
       openShop(scope) {
-        console.log(scope)
         this.showDialogue = true
-        console.log(this.showDialogue)
         this.shopData = scope
-        console.log(shopData)
+        console.log(this.shopData)
       }
     },
     moutned: {
