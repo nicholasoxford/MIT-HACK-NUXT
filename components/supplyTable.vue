@@ -36,7 +36,6 @@
       label="Availability"
       width="180"
 >
-      
     </el-table-column>
     <el-table-column
       prop="cost"
@@ -72,7 +71,7 @@
         {
           productID: 'Glove_1',
           productName: 'Gloves',
-          productImage: 'https://mit-hackathon-images.s3.amazonaws.com/256CenturyQgallon.png',
+          productImage: 'https://mit-hackathon-images.s3.amazonaws.com/glove.png',
           availability : '2 days',
           cost: '$200 USD',
           location: '33.7490° N, 84.3880° W',
@@ -84,7 +83,7 @@
         {
           productID: 'Faceshield_1',
           productName: 'Faceshield',
-          productImage: 'http://foo.bar/Faceshield.png',
+          productImage: 'https://mit-hackathon-images.s3.amazonaws.com/face.png',
           availability : '5 days',
           cost: '$1500 USD',
           location: '33.7490° N, 84.3880° W',
@@ -96,7 +95,7 @@
         {
           productID: 'Gown_1',
           productName: 'Gown',
-          productImage: 'http://foo.bar/Gown.png',
+          productImage: 'https://mit-hackathon-images.s3.amazonaws.com/gown.jpg',
           availability : 'Immediate',
           cost: '$500 USD',
           location: '33.7490° N, 84.3880° W',
@@ -139,8 +138,6 @@
 
 <style>
 .c-image {
-  width: 180px;
-  height: 80px;
   padding: 5px;
 }
 </style>
