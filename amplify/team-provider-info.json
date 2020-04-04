@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-mit-hack-dev-103553-authRole",
+            "UnauthRoleArn": "arn:aws:iam::468542993197:role/amplify-mit-hack-dev-103553-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::468542993197:role/amplify-mit-hack-dev-103553-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-mit-hack-dev-103553-deployment",
+            "UnauthRoleName": "amplify-mit-hack-dev-103553-unauthRole",
+            "StackName": "amplify-mit-hack-dev-103553",
+            "StackId": "arn:aws:cloudformation:us-east-1:468542993197:stack/amplify-mit-hack-dev-103553/97227ce0-7681-11ea-a42e-12b6a099270b",
+            "AmplifyAppId": "d2vszqojc46bcl"
+        },
+        "categories": {
+            "auth": {
+                "mithackfb5f22ef": {}
+            }
+        }
+    }
+}
