@@ -1,9 +1,56 @@
 <template>
   <div>
-    <nuxt />
+    <TopNav :signedIn="signedIn" class="top-menu"></TopNav>
+    <nuxt class="top-menu" />
   </div>
 </template>
+<script>
+import { Auth } from 'aws-amplify'
+import { AmplifyEventBus } from 'aws-amplify-vue'
+import TopNav from '~/components/TopNav.vue'
+export default {
+  data() {
+    return {
+      signedIn: false,
+      title: "Corona FACT(Finding a Clinical Trial)"
+    }
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        { hid: 'description', name: 'description', content: 'My custom description' }
+      ]
+    }
+  },
+  components: {
+    TopNav
+  },
+    methods: {
+    async findUser() {
+      try {
+        const user = await Auth.currentAuthenticatedUser()
+        this.signedIn = true
+        console.log(user)
+      } catch(err) {
+        this.signedIn = false
+      }
+    }
+  },
+  created() {
+    this.findUser()
 
+    AmplifyEventBus.$on('authState', info => {
+      if(info === "signedIn") {
+        this.findUser()
+      } else {
+        this.signedIn = false
+      }
+    })
+  }
+}
+</script>
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',

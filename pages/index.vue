@@ -1,24 +1,72 @@
 <template>
+<div class="main">
   <div class="container">
-    <img class="logo" src="../assets/logo.png" alt="Nuxt Amplify Auth Starter">
-    <div v-if="!signedIn">
-      <amplify-authenticator />
-    </div>
-    <div v-else>
-      <amplify-sign-out/>
-    </div>
+<el-card class="box-card">
+  <div slot="header" class="clearfix">
+    <img class="logo" src="../assets/mask.png" style="max-width: 200px" alt="Nuxt Amplify Auth Starter">
+    <h1>Helping you maintain invetory</h1>
   </div>
+  <supplyTable></supplyTable>
+      <nuxt class="main-app-nuxt"/>
+</el-card>
+<el-card class="box-card2">
+    <a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html"><img class="logo" src="../assets/logo.png" style="max-width: 200px" alt="Nuxt Amplify Auth Starter"></a>
+    <h1>Click the photo above for CDC guidelines concerning the COVID-19 pandemic</h1>
+</el-card>
+      </div>
+</div>
+
 </template>
 
 <script>
 import { Auth } from 'aws-amplify'
 import { AmplifyEventBus } from 'aws-amplify-vue'
+import { elementui} from 'element-ui'
+import supplyTable from '~/components/supplyTable.vue'
+
+
 
 export default {
   data() {
     return {
-      signedIn: false
+
+      signedIn: false,
+      authConfig: {
+          signUpConfig: {
+            header: 'Sign up for Clinical Trials',
+            hideAllDefaults: true,
+            defaultCountryCode: '1',
+            signUpFields: [
+
+              {
+                label: 'Email',
+                key: 'email',
+                required: true,
+                displayOrder: 1,
+                type: 'string',
+                signUpWith: true
+              },
+              {
+                label: 'Password',
+                key: 'password',
+                required: true,
+                displayOrder: 2,
+                type: 'password'
+              },
+                              {
+                label: 'My user name',
+                key: 'username',
+                required: true,
+                displayOrder: 3,
+                type: 'string',
+              },
+            ]
+          }
+      }
     }
+  },
+  components: {
+    supplyTable
   },
   methods: {
     async findUser() {
@@ -51,7 +99,6 @@ export default {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
 }
@@ -60,4 +107,29 @@ export default {
   margin-bottom: 30px;
   max-width: 400px;
 }
+  .text {
+    font-size: 14px;
+  }
+
+  .item {
+    margin-bottom: 18px;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+  .clearfix:after {
+    clear: both
+  }
+
+  .box-card {
+    width: 80%;
+    margin-top: 10px;
+  }
+  .box-card2{
+    width: 80%;
+    margin-top: 15px
+  }
 </style>
