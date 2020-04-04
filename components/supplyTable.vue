@@ -7,7 +7,7 @@
   center
  >
   
-  <el-form  :model="purchaseOrder"  ref="form1"  class="ruleForm" label-position="top" align="center" >
+<el-form  :model="purchaseOrder"  ref="form1"  class="ruleForm" label-position="top" align="center" >
 <el-form-item label="How many do you need?" prop="number">
 <el-input placeholder="Please input" type="number" v-model="purchaseOrder.number"></el-input>
   </el-form-item>
@@ -22,11 +22,11 @@
     stripe
     style="width: 100%">
     <el-table-column
-      prop="productID"
-      label="productID"
+      prop="productName"
+      label="Item"
       width="180">
     </el-table-column>
-          <el-table-column label="IMAGE" width="200px">
+          <el-table-column width="200px">
         <template slot-scope="scope">
 <el-image class="c-image" fit="cover" :src="scope.row.productImage"></el-image>
         </template>
