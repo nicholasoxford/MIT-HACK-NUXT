@@ -1,4 +1,18 @@
 <template>
+<div style="width: 100%; content-align: center">
+    <el-dialog
+  :visible.sync="showDialogue"
+  title="Warning"
+  width="30%"
+  center
+ >
+  
+  <span></span>
+  <span slot="footer" class="dialog-footer">
+    <el-button @click="this.showDialogue = false">Cancel</el-button>
+    <el-button type="primary" @click="checkout()">Confirm</el-button>
+  </span>
+</el-dialog>
    <el-table
     :data="tableData"
     stripe
@@ -24,7 +38,15 @@
       prop="cost"
       label="Cost">
     </el-table-column>
+        <el-table-column
+      label="Actions">
+       <template slot-scope="scope">
+     <el-button type="success" @click="openShop(scope.prop)" round>Inquire</el-button>
+       </template>
+    </el-table-column>
   </el-table>
+
+</div>
 </template>
 
 <script>
@@ -79,8 +101,34 @@
               moreStuff: 'if needed'
           }
         }
-    ]
+    ],
+    shopData: [{
+          productID: '',
+          productName: '',
+          productImage: '',
+          availability : '',
+          cost: '',
+          location: '',
+          metadata: {
+              something: '',
+              moreStuff: ''
+          }
+        },
+    ],
+    showDialogue: false
       }
+    },
+    methods: {
+      openShop(scope) {
+        console.log(scope)
+        this.showDialogue = true
+        console.log(this.showDialogue)
+        this.shopData = scope
+        console.log(shopData)
+      }
+    },
+    moutned: {
+
     }
   }
 </script>
