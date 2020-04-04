@@ -10,10 +10,10 @@
     </el-table-column>
           <el-table-column label="IMAGE" width="200px">
         <template slot-scope="scope">
-          <el-image fit="cover" :src="get(scope.row,'thumbnailArtUrlMeta.baseUrl')">
-
-          </el-image>
+fdsds
         </template>
+
+          </el-table-column>
     <el-table-column
       prop="name"
       label="Name"
@@ -34,7 +34,7 @@
           productID: '2016-05-03',
           productImage: 'Tom',
           availability : 'No. 189, Grove St, Los Angeles',
-          
+
         }, {
           ProductID: '2016-05-02',
           name: 'Tom',
