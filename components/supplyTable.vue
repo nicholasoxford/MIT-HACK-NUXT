@@ -10,7 +10,7 @@
     </el-table-column>
           <el-table-column label="IMAGE" width="200px">
         <template slot-scope="scope">
-<el-image class="c-image" fit="cover" :src="require(scope.row.productImage)"></el-image>
+<el-image class="c-image" fit="cover" :src="scope.row.productImage"></el-image>
         </template>
           </el-table-column>
     <el-table-column
@@ -34,7 +34,7 @@
         tableData: [{
           productID: 'N95Mask_1',
           productName: 'N95 Mask',
-          productImage: 'static/mask.png',
+          productImage: 'https://mit-hackathon-images.s3.amazonaws.com/mask.png',
           availability : 'Immediate',
           cost: '$500 USD',
           location: '33.7490° N, 84.3880° W',
@@ -46,7 +46,7 @@
         {
           productID: 'Glove_1',
           productName: 'Gloves',
-          productImage: 'http://foo.bar/Glove.png',
+          productImage: 'https://mit-hackathon-images.s3.amazonaws.com/256CenturyQgallon.png',
           availability : '2 days',
           cost: '$200 USD',
           location: '33.7490° N, 84.3880° W',
