@@ -4,24 +4,25 @@
     stripe
     style="width: 100%">
     <el-table-column
-      prop="date"
-      label="Date"
+      prop="productID"
+      label="productID"
       width="180">
     </el-table-column>
           <el-table-column label="IMAGE" width="200px">
         <template slot-scope="scope">
-fdsds
+<el-image class="c-image" fit="cover" :src="require(scope.row.productImage)"></el-image>
         </template>
-
           </el-table-column>
     <el-table-column
-      prop="name"
-      label="Name"
-      width="180">
+      prop="availability"
+      label="Availability"
+      width="180"
+>
+      
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="Address">
+      prop="cost"
+      label="Cost">
     </el-table-column>
   </el-table>
 </template>
@@ -31,28 +32,63 @@ fdsds
     data() {
       return {
         tableData: [{
-          productID: '2016-05-03',
-          productImage: 'Tom',
-          availability : 'No. 189, Grove St, Los Angeles',
-
-        }, {
-          ProductID: '2016-05-02',
-          name: 'Tom',
-          address: 'No. 189, Grove St, Los Angeles'
-        }, {
-          ProductID: '2016-05-04',
-          name: 'Tom',
-          address: 'No. 189, Grove St, Los Angeles',
-        }, {
-          ProductID: '2016-05-01',
-          name: 'Tom',
-          address: 'No. 189, Grove St, Los Angeles'
-        }]
+          productID: 'N95Mask_1',
+          productName: 'N95 Mask',
+          productImage: 'static/mask.png',
+          availability : 'Immediate',
+          cost: '$500 USD',
+          location: '33.7490° N, 84.3880° W',
+          metadata: {
+              something: 'if needed',
+              moreStuff: 'if needed'
+          }
+        },
+        {
+          productID: 'Glove_1',
+          productName: 'Gloves',
+          productImage: 'http://foo.bar/Glove.png',
+          availability : '2 days',
+          cost: '$200 USD',
+          location: '33.7490° N, 84.3880° W',
+          metadata: {
+              something: 'if needed',
+              moreStuff: 'if needed'
+          }
+        }, 
+        {
+          productID: 'Faceshield_1',
+          productName: 'Faceshield',
+          productImage: 'http://foo.bar/Faceshield.png',
+          availability : '5 days',
+          cost: '$1500 USD',
+          location: '33.7490° N, 84.3880° W',
+          metadata: {
+              something: 'if needed',
+              moreStuff: 'if needed'
+          }
+        },
+        {
+          productID: 'Gown_1',
+          productName: 'Gown',
+          productImage: 'http://foo.bar/Gown.png',
+          availability : 'Immediate',
+          cost: '$500 USD',
+          location: '33.7490° N, 84.3880° W',
+          metadata: {
+              something: 'if needed',
+              moreStuff: 'if needed'
+          }
+        }
+    ]
       }
     }
   }
 </script>
 
 <style>
-
+.c-image {
+  width: 180px;
+  height: 80px;
+  padding: 5px;
+}
 </style>
