@@ -1,7 +1,7 @@
 <template>
   <div>
     <TopNav :signedIn="signedIn" class="top-menu"></TopNav>
-    <nuxt class="top-menu" />
+    <nuxt class="top-class" />
   </div>
 </template>
 <script>
