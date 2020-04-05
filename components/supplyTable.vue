@@ -11,39 +11,54 @@
 <el-form-item label="How many do you need?" prop="number">
 <el-input placeholder="Please input" type="number" v-model="purchaseOrder.number"></el-input>
   </el-form-item>
+  <el-form-item label="How many do you need?" prop="number">
+<el-input placeholder="Please input" type="number" v-model="purchaseOrder.number"></el-input>
+  </el-form-item>
   </el-form>
   <span slot="footer" class="dialog-footer">
-    <el-button @click="this.showDialogue = false">Cancel</el-button>
+    <el-button @click="checkout()">Cancel</el-button>
     <el-button type="primary" @click="checkout()">Confirm</el-button>
   </span>
 </el-dialog>
    <el-table
     :data="tableData"
     stripe
-    style="width: 100%">
-    <el-table-column
-      prop="productName"
-      label="Item"
-      width="180">
-    </el-table-column>
-          <el-table-column width="200px">
+    header-align="center"
+
+>
+         <el-table-column width="250px" label="Product Image">
         <template slot-scope="scope">
 <el-image class="c-image" fit="cover" :src="scope.row.productImage"></el-image>
         </template>
           </el-table-column>
     <el-table-column
+      prop="productName"
+      label="Item"
+    >
+    </el-table-column>
+     
+    <el-table-column
       prop="availability"
       label="Availability"
-      width="180"
+      
 >
+    </el-table-column>
+        <el-table-column
+      prop="location"
+      label="Closest Location"
+      >
     </el-table-column>
     <el-table-column
       prop="cost"
-      label="Cost">
+      label="Cost"
+      >
     </el-table-column>
         <el-table-column
-      label="Actions">
-       <template slot-scope="scope">
+      label="Actions"
+      align="right"
+      style="margin-right: 10px"
+>
+       <template slot-scope="scope" style="padding-right: 5px">
      <el-button type="success" @click="openShop(scope.row)" round>Inquire</el-button>
        </template>
     </el-table-column>
@@ -60,9 +75,9 @@
           productID: 'N95Mask_1',
           productName: 'N95 Mask',
           productImage: 'https://mit-hackathon-images.s3.amazonaws.com/mask.png',
-          availability : 'Immediate',
+          availability : '3 days',
           cost: '$500 USD',
-          location: '33.7490° N, 84.3880° W',
+          location: 'Cambridge, MA',
           metadata: {
               something: 'if needed',
               moreStuff: 'if needed'
@@ -74,7 +89,7 @@
           productImage: 'https://mit-hackathon-images.s3.amazonaws.com/glove.png',
           availability : '2 days',
           cost: '$200 USD',
-          location: '33.7490° N, 84.3880° W',
+          location: 'Augusta, ME',
           metadata: {
               something: 'if needed',
               moreStuff: 'if needed'
@@ -86,7 +101,7 @@
           productImage: 'https://mit-hackathon-images.s3.amazonaws.com/face.png',
           availability : '5 days',
           cost: '$1500 USD',
-          location: '33.7490° N, 84.3880° W',
+          location: 'Toms River, NJ',
           metadata: {
               something: 'if needed',
               moreStuff: 'if needed'
@@ -98,7 +113,7 @@
           productImage: 'https://mit-hackathon-images.s3.amazonaws.com/gown.jpg',
           availability : 'Immediate',
           cost: '$500 USD',
-          location: '33.7490° N, 84.3880° W',
+          location: 'Pittsburgh, PA',
           metadata: {
               something: 'if needed',
               moreStuff: 'if needed'
@@ -128,7 +143,9 @@
         this.showDialogue = true
         this.shopData = scope
         console.log(this.shopData)
-      }
+      },
+      checkout()
+       { this.showDialogue = false}
     },
     moutned: {
 
@@ -139,5 +156,9 @@
 <style>
 .c-image {
   padding: 5px;
+  width: 200px;
+}
+.el-table {
+  text-align: center;
 }
 </style>

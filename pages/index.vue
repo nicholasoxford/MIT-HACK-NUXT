@@ -3,15 +3,15 @@
   <div class="container">
 <!-- <el-card class="box-card"> -->
   <div slot="header" class="clearfix">
-    <img class="logo" src="../assets/uhs.png" style="max-width: 200px; padding-top: 15px" alt="Nuxt Amplify Auth Starter">
-    <h1>Helping you maintain invetory</h1>
+    <img class="logo" src="../assets/logo.png" style="max-width: 200px; padding-top: 15px" alt="Nuxt Amplify Auth Starter">
+    <h1>Covid-19 Invetory Solutions</h1>
   </div>
   <supplyTable></supplyTable>
       <nuxt class="main-app-nuxt"/>
 <!-- </el-card> -->
 <el-card class="box-card2">
-    <a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html"><img class="logo" src="../assets/logo.png" style="max-width: 200px" alt="Nuxt Amplify Auth Starter"></a>
-    <h1>Click the photo above for CDC guidelines concerning the COVID-19 pandemic</h1>
+    <a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html"><img class="logo" src="../assets/uhs.png" style="max-width: 200px" alt="Nuxt Amplify Auth Starter"></a>
+    <h1>Click the photo above to integrate your request with your company invetory program</h1>
 </el-card>
       </div>
 </div>
