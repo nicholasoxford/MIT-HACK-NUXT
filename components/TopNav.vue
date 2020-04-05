@@ -1,6 +1,7 @@
 <template>
   <el-menu class="menu" mode="horizontal" background-color="#545c64" text-color="white">
   <el-menu-item index="1"><nuxt-link :to="{ name: 'index' }">Home</nuxt-link></el-menu-item>
+  <el-menu-item index="5"><nuxt-link :to="{ name: 'inventory' }">I have supplies</nuxt-link></el-menu-item>
   <el-submenu index="2">
     <template slot="title" >Supplies Avaliable</template>
     <el-menu-item index="2-1" @click="coming_soon">Volunteer FAQ</el-menu-item>

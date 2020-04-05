@@ -48,14 +48,15 @@
       label="Closest Location"
       >
     </el-table-column>
-    <el-table-column
-      prop="cost"
-      label="Cost"
-      >
-    </el-table-column>
+
     <el-table-column
       prop="quantity"
       label="Quantity"
+      >
+    </el-table-column>
+        <el-table-column
+      prop="cost"
+      label="Total Cost"
       >
     </el-table-column>
         <el-table-column
