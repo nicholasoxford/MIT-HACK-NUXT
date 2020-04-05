@@ -3,8 +3,8 @@
   <div class="container">
 <!-- <el-card class="box-card"> -->
   <div slot="header" class="clearfix">
-    <img class="logo" src="../assets/logo.png" style="max-width: 200px; padding-top: 15px" alt="Nuxt Amplify Auth Starter">
-    <h1>Medishare Inventory Solutions</h1>
+    <img class="logo" src="../assets/logo.jpeg" style="max-width: 200px; padding-top: 5px" alt="Nuxt Amplify Auth Starter">
+    <h1>Medishare  Inventory Solutions</h1>
   </div>
   <supplyTable></supplyTable>
       <nuxt class="main-app-nuxt"/>
@@ -13,6 +13,8 @@
     <a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html"><img class="logo" src="../assets/uhs.png" style="max-width: 200px" alt="Nuxt Amplify Auth Starter"></a>
     <h1>Click the photo above to integrate your request with your company invetory program</h1>
 </el-card>
+<div>
+</div>
       </div>
 </div>
 
@@ -106,7 +108,7 @@ export default {
 }
 
 .logo {
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   max-width: 400px;
 }
   .text {
