@@ -25,6 +25,7 @@
     stripe
     header-align="center"
 
+
 >
          <el-table-column width="250px" label="Product Image">
         <template slot-scope="scope">
@@ -34,12 +35,14 @@
     <el-table-column
       prop="productName"
       label="Item"
+
     >
     </el-table-column>
      
     <el-table-column
       prop="availability"
       label="Availability"
+
       
 >
     </el-table-column>
@@ -51,12 +54,17 @@
 
     <el-table-column
       prop="quantity"
-      label="Quantity"
+      label="Quantity Available"
       >
     </el-table-column>
         <el-table-column
       prop="cost"
-      label="Total Cost"
+      label="Cost Per Unit"
+      >
+      </el-table-column>
+              <el-table-column
+      prop="unit"
+      label="Unit"
       >
     </el-table-column>
         <el-table-column
@@ -81,8 +89,9 @@
           productName: 'N95 Mask',
           productImage: 'https://mit-hackathon-images.s3.amazonaws.com/mask.png',
           availability : '3 days',
-          cost: '$500 USD',
-          quantity: 400,
+          cost: '$2.00',
+          unit: '1 mask',
+          quantity: 1400,
           location: 'Cambridge, MA',
           metadata: {
               something: 'if needed',
@@ -93,8 +102,9 @@
           productID: 'Glove_1',
           productName: 'Gloves',
           productImage: 'https://mit-hackathon-images.s3.amazonaws.com/glove.png',
-          availability : '2 days',
-          cost: '$200 USD',
+          availability : 'Immediate',
+          cost: 'Donation',
+           unit: '1 box (100 Gloves)',
           quantity: 300,
           location: 'Augusta, ME',
           metadata: {
@@ -107,8 +117,9 @@
           productName: 'Faceshield',
           productImage: 'https://mit-hackathon-images.s3.amazonaws.com/face.png',
           availability : '5 days',
-          cost: '$1500 USD',
-          quantity: 500,
+          cost: '$6.50',
+           unit: '1 Faceshield',
+          quantity: 342,
           location: 'Toms River, NJ',
           metadata: {
               something: 'if needed',
@@ -120,8 +131,9 @@
           productName: 'Gown',
           productImage: 'https://mit-hackathon-images.s3.amazonaws.com/gown.jpg',
           availability : 'Immediate',
-          cost: '$500 USD',
-          quantity: 400,
+          cost: '$4.50 USD',
+           unit: '1 Gown',
+          quantity: 490,
           location: 'Pittsburgh, PA',
           metadata: {
               something: 'if needed',

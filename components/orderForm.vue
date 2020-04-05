@@ -2,7 +2,22 @@
 <div>
     <div v-if="pageInfo">
   <el-form  :model="form1" :rules="rules1" ref="form1"  class="ruleForm" label-position="top" align="center" >
-
+<el-form-item label="First Name" prop="first">
+        <el-input
+          v-model="form1.first"
+          filterable
+        >
+      
+        </el-input>
+  </el-form-item>
+  <el-form-item label="Last Name" prop="last">
+        <el-input
+          v-model="form1.last"
+          filterable
+        >
+      
+        </el-input>
+  </el-form-item>
     <el-form-item label="Are you a hospital or health care facility?" prop="testing">
         <el-select
           v-model="form1.testing"
@@ -34,7 +49,7 @@
         </el-select>
           </el-form-item>
          
-            <el-form-item label="What type equipment do you have?" prop="pregnant">
+            <el-form-item label="What resources do you have?" prop="pregnant">
         <el-select
           v-model="form1.pregnant"
           filterable
@@ -146,6 +161,12 @@ data(){
         rules1: {
           state: [
             { required: true, message: 'Please input which state you are in.', trigger: 'change' },
+          ],
+                    first: [
+            { required: true, message: 'Please enter your first name.', trigger: 'change' },
+          ],
+                              last: [
+            { required: true, message: 'Please enter your first name.', trigger: 'change' },
           ],
           gender: [
             { required: true, message: 'Please enter a quantity.', trigger: 'change' }
@@ -455,10 +476,7 @@ hosptial_equipment: [{
         value: "ventilators"
     },
     ],
-    loan: [{
-    label: "PPE",
-    value: "ppe"
-    },
+    loan: [
     {
         label: "Loan",
         value: "loan"
