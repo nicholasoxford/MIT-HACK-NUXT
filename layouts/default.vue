@@ -5,6 +5,7 @@
   </div>
 </template>
 <script>
+
 import { Auth } from 'aws-amplify'
 import { AmplifyEventBus } from 'aws-amplify-vue'
 import TopNav from '~/components/TopNav.vue'
@@ -12,7 +13,7 @@ export default {
   data() {
     return {
       signedIn: false,
-      title: "Corona FACT(Finding a Clinical Trial)"
+      title: "MEDISHARE"
     }
   },
   head () {
@@ -27,6 +28,7 @@ export default {
   components: {
     TopNav
   },
+
     methods: {
     async findUser() {
       try {

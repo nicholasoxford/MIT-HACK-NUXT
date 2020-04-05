@@ -1,9 +1,9 @@
 {
-  "name": "nuxt-amplify-auth-starter",
+  "name": "medishsare",
   "version": "1.0.0",
-  "description": "Nuxt Amplify Auth Starter is a starter template for adding Amplify Auth to a Nuxt single page web application.",
-  "author": "Shadow Smith",
-  "private": true,
+  "description": "Platform to connect organizations who have medical supplies to PPE, cleaning supplies, and medical devices with the ability to request supplies and the ability to put supplies up for donation.",
+  "author": "Nicholas Oxford",
+  "private": false,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

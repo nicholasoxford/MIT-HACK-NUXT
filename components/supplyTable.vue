@@ -11,13 +11,13 @@
 <el-form-item label="How many do you need?" prop="number">
 <el-input placeholder="Please input" type="number" v-model="purchaseOrder.number"></el-input>
   </el-form-item>
-  <el-form-item label="How many do you need?" prop="number">
+  <el-form-item label="How many do you use a day?" prop="number">
 <el-input placeholder="Please input" type="number" v-model="purchaseOrder.number"></el-input>
   </el-form-item>
   </el-form>
   <span slot="footer" class="dialog-footer">
     <el-button @click="checkout()">Cancel</el-button>
-    <el-button type="primary" @click="checkout()">Confirm</el-button>
+    <el-button type="primary" @click="checkout()">Submit</el-button>
   </span>
 </el-dialog>
    <el-table
@@ -55,10 +55,9 @@
     </el-table-column>
         <el-table-column
       label="Actions"
-      align="right"
       style="margin-right: 10px"
 >
-       <template slot-scope="scope" style="padding-right: 5px">
+       <template slot-scope="scope" style="padding-right: 5pxc">
      <el-button type="success" @click="openShop(scope.row)" round>Inquire</el-button>
        </template>
     </el-table-column>

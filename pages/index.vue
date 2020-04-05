@@ -4,7 +4,7 @@
 <!-- <el-card class="box-card"> -->
   <div slot="header" class="clearfix">
     <img class="logo" src="../assets/logo.png" style="max-width: 200px; padding-top: 15px" alt="Nuxt Amplify Auth Starter">
-    <h1>Covid-19 Invetory Solutions</h1>
+    <h1>Medishare Inventory Solutions</h1>
   </div>
   <supplyTable></supplyTable>
       <nuxt class="main-app-nuxt"/>
@@ -17,6 +17,7 @@
 </div>
 
 </template>
+
 
 <script>
 import { Auth } from 'aws-amplify'
@@ -68,6 +69,7 @@ export default {
   components: {
     supplyTable
   },
+
   methods: {
     async findUser() {
       try {
